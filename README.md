@@ -69,6 +69,50 @@ npm run preview
 
 ---
 
+## 🎨 Custom Logo & Brand Assets
+
+The brand identity was custom-crafted in vector SVG format:
+- `public/logo.svg`: Full horizontal brand logo with emblem, bold display typography, and Cary, NC subtitle.
+- `public/logo-white.svg`: High-contrast inverted logo for dark backgrounds & footers.
+- `public/logo-icon.svg`: Standalone emblem featuring sweetgrass blades, stone masonry curve, and North Carolina sunrise.
+- `public/favicon.svg`: Scalable vector browser tab favicon.
+- `src/components/Logo.jsx`: Reusable React logo component supporting `variant="default" | "white" | "icon"`.
+
+---
+
+## 🚢 Push to Git & Deploy to Vercel
+
+### Step 1: Push to GitHub / GitLab
+1. Create a new repository on [GitHub](https://github.com/new) (e.g. `sweetgrass-landscaping`).
+2. Link your local repository and push:
+```bash
+git remote add origin https://github.com/<YOUR_USERNAME>/sweetgrass-landscaping.git
+git push -u origin main
+```
+
+### Step 2: Deploy to Vercel (1-Click via Git)
+1. Go to [vercel.com](https://vercel.com) and log in.
+2. Click **"Add New..."** &rarr; **"Project"**.
+3. Import your `sweetgrass-landscaping` repository from GitHub.
+4. Vercel automatically detects **Vite**:
+   - **Framework Preset**: `Vite`
+   - **Build Command**: `npm run build`
+   - **Output Directory**: `dist`
+5. Click **"Deploy"**.
+
+> **Note:** A production-ready `vercel.json` is already included to handle SPA client-side routing rewrites (`/*` &rarr; `/index.html`), ensuring deep links (like `/services` and `/contact`) reload without 404 errors.
+
+### Alternative: Deploy directly via Vercel CLI
+```bash
+# Deploy to preview
+npx vercel
+
+# Deploy directly to production
+npx vercel --prod
+```
+
+---
+
 ## 📁 Project Structure
 
 ```text
